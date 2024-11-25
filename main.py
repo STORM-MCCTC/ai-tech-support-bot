@@ -10,11 +10,11 @@ with open('api-key.txt', 'r') as file:
 bot_names = [
     "Alex", "Sam", "Charlie", "Jordan", "Riley", "Taylor",
     "Casey", "Morgan", "Dakota", "Jamie", "Quinn", "Bailey",
-    "Jordan", "Avery", "Skyler", "Cameron", "Emerson", "Addison",
-    "Hunter", "Dakota", "Peyton", "Blake", "Logan", "Finley",
-    "Elliot", "Sage", "Reagan", "Lennox", "Carter", "Emery",
-    "Mackenzie", "Jesse", "Sawyer", "Phoenix", "Tatum", "Marley",
-    "Rowan", "River", "Dakota", "Sloan", "Stevie", "Reese"
+    "Jordan", "Avery", "Skyler", "Addison","Hunter", "Dakota",
+    "Peyton", "Blake", "Logan", "Finley", "Elliot", "Sage", "Reagan",
+    "Lennox", "Carter", "Emery","Mackenzie", "Jesse", "Sawyer",
+    "Phoenix", "Tatum", "Marley", "Rowan", "River", "Dakota",
+    "Sloan", "Stevie", "Reese"
 ]
 
 bot_name = random.choice(bot_names)
@@ -37,7 +37,6 @@ def get_response():
 
     bot_reply = response['choices'][0]['message']['content']
     
- 
     chat_box.config(state=tk.NORMAL)
     chat_box.insert(tk.END, f"{bot_name}: " + bot_reply + '\n')
     chat_box.config(state=tk.DISABLED)  
@@ -46,7 +45,7 @@ def get_response():
     entry.delete(0, tk.END)
 
 window = tk.Tk()
-window.title("Chatbot")
+window.title("Customer Service Chatbot")
 
 chat_box = scrolledtext.ScrolledText(window, wrap=tk.WORD, width=50, height=20, state=tk.DISABLED)
 chat_box.grid(row=0, column=0, padx=10, pady=10)
